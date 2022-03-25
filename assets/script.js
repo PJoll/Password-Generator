@@ -5,7 +5,6 @@ const generateBtn = document.querySelector("#generate");
 function writePassword() {
   
   const passwordText = document.querySelector("#password");
-  //const characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!#$%&'()*+,-./\\:;<=>?@][^_`{|}~";
   let characters = "";
   let lowercaseCharachters = false;
   let uppercase = false;
@@ -36,7 +35,13 @@ function writePassword() {
 
   const minimumLength = 8;
   const maximumLength = 128;
-  let passwordLength = prompt("type the length of password") ;
+  let passwordLength = 0;
+  while(isNaN(+passwordLength)|| passwordLength<minimumLength || passwordLength>maximumLength){
+     passwordLength = prompt("type the length of password");
+    if (isNaN(+passwordLength)|| passwordLength<minimumLength || passwordLength>maximumLength){
+      alert("Must be a number with length 8-128");
+    }
+  }
   let password = "";
   passwordText.value = password;
   for(let i = 0; i <= passwordLength; i++){
