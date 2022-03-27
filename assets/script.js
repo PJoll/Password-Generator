@@ -1,26 +1,28 @@
-// Assignment Code
+
 const generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+
 function writePassword() {
-  
+  //Declaring Variables for password
   const passwordText = document.querySelector("#password");
   let characters = "";
   let lowercaseCharachters = false;
   let uppercase = false;
   let numeric = false;
   let special = false;
+  //Creating popup boxes for all cases
   while(!lowercaseCharachters && !uppercase && !numeric && !special) {
     lowercaseCharachters = confirm("Do you want lowercase charachters?");
     uppercase =  confirm("Do you want upeprcase charachters?");
     numeric =  confirm("Do you want numeric charachters");
     special =  confirm("Do you want special charachters");
+    // Situation where nothing is chosen
     if(!lowercaseCharachters && !uppercase && !numeric && !special) {
       alert("Must select at least one character type")
     }
 
   }
-
+// Declaring All characters
   if (lowercaseCharachters) {
     characters += "abcdefghijklmnopqrstuvwxyz"
   }
@@ -32,7 +34,7 @@ function writePassword() {
     characters += "!#$%&'()*+,-./\\:;<=>?@][^_`{|}~\""
   }
 
-
+// Setting the length of the password
   const minimumLength = 8;
   const maximumLength = 128;
   let passwordLength = 0;
@@ -42,6 +44,7 @@ function writePassword() {
       alert("Must be a number with length 8-128");
     }
   }
+  // Creating the math for the password
   let password = "";
   passwordText.value = password;
   for(let i = 0; i <= passwordLength; i++){
@@ -51,8 +54,5 @@ function writePassword() {
   passwordText.value = password;
 }
     
-
-
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
