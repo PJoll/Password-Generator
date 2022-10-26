@@ -6,24 +6,24 @@ function writePassword() {
   //Declaring Variables for password
   const passwordText = document.querySelector("#password");
   let characters = "";
-  let lowercaseCharachters = false;
+  let lowercaseCharacters = false;
   let uppercase = false;
   let numeric = false;
   let special = false;
   //Creating popup boxes for all cases
-  while(!lowercaseCharachters && !uppercase && !numeric && !special) {
-    lowercaseCharachters = confirm("Do you want lowercase charachters?");
-    uppercase =  confirm("Do you want upeprcase charachters?");
-    numeric =  confirm("Do you want numeric charachters");
-    special =  confirm("Do you want special charachters");
+  while(!lowercaseCharacters && !uppercase && !numeric && !special) {
+    lowercaseCharacters = confirm("Do you want lowercase characters?");
+    uppercase =  confirm("Do you want upeprcase characters?");
+    numeric =  confirm("Do you want numeric characters");
+    special =  confirm("Do you want special characters");
     // Situation where nothing is chosen
-    if(!lowercaseCharachters && !uppercase && !numeric && !special) {
+    if(!lowercaseCharacters && !uppercase && !numeric && !special) {
       alert("Must select at least one character type")
     }
 
   }
 // Declaring All characters
-  if (lowercaseCharachters) {
+  if (lowercaseCharacters) {
     characters += "abcdefghijklmnopqrstuvwxyz"
   }
   if (uppercase) {
